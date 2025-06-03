@@ -1,75 +1,60 @@
-### GitHub Repository Introduction
+# MCMI 특징 선택 알고리즘
 
-# MCMI Feature Selection Algorithm
+이 저장소는 Maximum Conditional Mutual Information(MCMI) 방법을 이용한 특징 선택 코드를 제공합니다. MATLAB 버전과 Python 버전이 포함되어 있으며, 예제 데이터와 실행 스크립트도 제공합니다.
 
-Welcome to the repository for the MCMI (Maximum Conditional Mutual Information) Feature Selection Algorithm. This repository contains the MATLAB code and necessary files for implementing the MCMI-based feature selection method, designed for high-dimensional datasets. The repository includes code for calculating entropy, joint entropy, and mutual information, as well as sample datasets.
+## 시작하기
 
-## Getting Started
+### 필요 환경
+- 원본 구현을 위한 MATLAB
+- Python 3
+- `numpy`, `scikit-learn` 패키지
 
-To use the MCMI feature selection algorithm, follow the instructions below:
+### 주요 파일
+- `mcmi.m` : MATLAB 구현
+- `mcmi.py` : Python 구현
+- `Feature Selection Package` 디렉터리: MATLAB에서 필요한 함수 모음
+  - `load_fspackage.m`
+  - `Entropy.m` / `entropy.py`
+  - `JointEntropy.m` / `joint_entropy.py`
+  - `MutualInformation.m` / `mutual_information.py`
+- 샘플 데이터
+  - `GBMCNA.mat`
+  - `Lung_CNA.mat`
 
-### Prerequisites
+## 사용 방법
 
-- MATLAB installed on your system
-
-### Files and Directories
-
-- **mcmi.m**: The main script for the MCMI feature selection algorithm.
-- **Feature Selection Package**: A folder containing supplementary functions required for the algorithm.
-  - **load_fspackage.m**: Script to load the necessary feature selection package.
-  - **Entropy.m**: Function to calculate entropy.
-  - **JointEntropy.m**: Function to calculate joint entropy.
-  - **MutualInformation.m**: Function to calculate mutual information.
-- **Datasets**:
-  - **GBMCNA.mat**: Sample dataset for feature selection.
-  - **Lung_CNA.mat**: Another sample dataset for feature selection.
-
-### Usage Instructions
-
-1. **Clone the repository**:
+1. 저장소 클론
    ```bash
    git clone https://github.com/yourusername/mcmi-feature-selection.git
-   ```
-
-2. **Navigate to the repository directory**:
-   ```bash
    cd mcmi-feature-selection
    ```
-
-3. **Load the Feature Selection Package**:
-   Open MATLAB and run the following command to load the necessary package:
+2. MATLAB 패키지 로드
    ```matlab
    run('Feature Selection Package/load_fspackage.m')
    ```
+3. MCMI 실행
+   - MATLAB: `run('mcmi.m')`
+   - Python: `python mcmi.py`
 
-4. **Run the MCMI algorithm**:
-   Execute the `mcmi.m` script in MATLAB:
-   ```matlab
-   run('mcmi.m')
-   ```
+## 예제
 
-### Sample Datasets
+`example` 폴더에는 Beagle로 보간된 작은 VCF 파일과 형질 정보가 들어 있습니다. 아래와 같이 실행하면 선택된 feature 인덱스가 `output/results.txt`에 저장됩니다.
 
-- **GBMCNA.mat**: This dataset contains genomic data for feature selection.
-- **Lung_CNA.mat**: This dataset includes lung cancer-related genomic data for feature selection.
+```bash
+pip install numpy scikit-learn
+cd example
+python3 run_example.py
+```
 
-### Functions
+## 함수 설명
+- `entropy.py`: 엔트로피 계산
+- `joint_entropy.py`: 결합 엔트로피 계산
+- `mutual_information.py`: 상호 정보량 계산
 
-- **Entropy.m**: Function to compute the entropy of a variable.
-- **JointEntropy.m**: Function to compute the joint entropy of two variables.
-- **MutualInformation.m**: Function to compute the mutual information between two variables.
-
-### Additional Information
-
-For more details on the MCMI algorithm and its applications, please refer to the accompanying documentation and code comments within the scripts.
-
----
-
-We hope you find this repository helpful for your feature selection tasks. If you have any questions or encounter any issues, please feel free to open an issue or contact us via GitHub.
+추가 내용은 각 스크립트의 주석을 참고하세요.
 
 ---
 
-**Repository Maintainer**: [Hongtao Shi]  
-**Contact**: [sht@qau.edu.cn]  
+저장소 관리자: Hongtao Shi  
+문의: sht@qau.edu.cn
 
-Happy coding!
