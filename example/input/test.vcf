@@ -1,0 +1,6 @@
+##fileformat=VCFv4.2
+##source=Beagle 5.4
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	Sample1	Sample2	Sample3	Sample4
+1	1000	rs1	A	G	.	PASS	.	GT:DS	0/0:0.0	0/1:1.0	1/1:2.0	0/0:0.0
+1	2000	rs2	T	C	.	PASS	.	GT:DS	0/1:1.0	0/0:0.0	0/1:1.0	1/1:2.0
+1	3000	rs3	G	A	.	PASS	.	GT:DS	1/1:2.0	0/1:1.0	0/0:0.0	0/0:0.0
